@@ -6,3 +6,5 @@ class CarAdmin(admin.ModelAdmin):
     search_fields = ('model',)
     
 admin.site.register(Car, CarAdmin)
+
+#comentario pra commit
