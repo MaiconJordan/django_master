@@ -6,6 +6,8 @@ from cars.models import Car
 
 
 def car_view(request):
+    print(request.GET.get('search'))
+    
     cars = Car.objects.filter(brand = 1)
     
     return render(request, 'cars.html',
