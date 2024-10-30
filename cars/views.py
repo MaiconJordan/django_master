@@ -6,9 +6,11 @@ from cars.models import Car
 
 
 def car_view(request):
-    print(request.GET.get('search'))
+    cars = Car.objects.all()
+    search = request.GET.get('search')
     
-    cars = Car.objects.filter(brand = 1)
+    if search:
+        cars = Car.objects.filter(model__contains = search)
     
     return render(request, 'cars.html',
                   {'cars' :cars})
